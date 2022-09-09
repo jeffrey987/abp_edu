@@ -18,7 +18,9 @@ namespace ABC.TeachOnline.Books
         /// get all books
         /// </summary>
         /// <returns></returns>
-        Task<List<BookDto>> GetListAsync();
+      List<BookDto> GetBookalist();
+
+     void TestBook();
     }
 
 

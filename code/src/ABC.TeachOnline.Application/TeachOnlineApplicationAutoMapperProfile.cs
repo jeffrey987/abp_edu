@@ -1,4 +1,5 @@
 ﻿using ABC.TeachOnline.Books;
+using ABC.TeachOnline.Users;
 using AutoMapper;
 
 namespace ABC.TeachOnline
@@ -13,6 +14,9 @@ namespace ABC.TeachOnline
 
             CreateMap<Book, BookDto>();
             CreateMap<CreateUpdateBookDto, Book>();
+            CreateMap<User, UserDto>();
+            CreateMap<CreateUpdateUserDto, User>();
+
         }
     }
 }

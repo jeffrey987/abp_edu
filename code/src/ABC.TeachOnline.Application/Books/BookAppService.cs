@@ -30,13 +30,19 @@ namespace ABC.TeachOnline.Books
         /// 
         /// </summary>
         /// <returns></returns>
-        public async Task<List<BookDto>> GetListAsync()
+        public List<BookDto> GetBookalist()
         {
-     
-            var list =await  _bookRepository.GetListAsync();
-            
+
+           var list =  _bookRepository.GetListAsync().Result;
+
             return ObjectMapper.Map<List<Book>, List<BookDto>>(list);
-            //throw new NotImplementedException();
+ 
+        }
+
+        public void TestBook()
+        {
+            Console.WriteLine("test console output");
+            
         }
     }
 }

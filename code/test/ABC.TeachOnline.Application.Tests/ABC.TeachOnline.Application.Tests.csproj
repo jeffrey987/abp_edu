@@ -16,4 +16,10 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Books\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Books\" />
+  </ItemGroup>
 </Project>

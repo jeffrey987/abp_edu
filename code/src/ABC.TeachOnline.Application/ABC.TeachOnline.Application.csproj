@@ -22,8 +22,14 @@
 
   <ItemGroup>
     <None Remove="Books\" />
+    <None Remove="Users\" />
+    <None Remove="Bases\" />
+    <None Remove="Apis\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Books\" />
+    <Folder Include="Users\" />
+    <Folder Include="Bases\" />
+    <Folder Include="Apis\" />
   </ItemGroup>
 </Project>
