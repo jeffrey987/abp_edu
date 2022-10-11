@@ -1,6 +1,9 @@
-﻿namespace ABC.TeachOnline
+﻿using System;
+using Volo.Abp.Application.Dtos;
+
+namespace ABC.TeachOnline.Dtos
 {
-    public class AuthorityDto
+    public class AuthorityDto:AuditedEntityDto<Guid>
     {
         /// <summary>
            /// 角色ID

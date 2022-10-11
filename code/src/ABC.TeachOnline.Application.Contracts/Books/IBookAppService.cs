@@ -20,7 +20,6 @@ namespace ABC.TeachOnline.Books
         /// <returns></returns>
       List<BookDto> GetBookalist();
 
-     void TestBook();
     }
 
 

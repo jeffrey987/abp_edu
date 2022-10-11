@@ -1,7 +1,7 @@
 ﻿using System;
 using Volo.Abp.Application.Dtos;
 
-namespace ABC.TeachOnline
+namespace ABC.TeachOnline.Dtos
 {
     public class UserDto : AuditedEntityDto<Guid>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ABC.TeachOnline
+namespace ABC.TeachOnline.Dtos
 {
     public class CreateUpdateUserDto
     {

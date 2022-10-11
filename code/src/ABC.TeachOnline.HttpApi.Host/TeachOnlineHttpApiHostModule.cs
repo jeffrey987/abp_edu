@@ -91,7 +91,20 @@ namespace ABC.TeachOnline
         {
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
-                options.ConventionalControllers.Create(typeof(TeachOnlineApplicationModule).Assembly);
+                options.ConventionalControllers.Create(typeof(TeachOnlineApplicationModule).Assembly,
+                    options => {
+                        //options.RootPath = "a";
+                        //options.UrlControllerNameNormalizer = (controller) =>
+                        //{
+                        //    if (controller.ControllerName.ToLower() == "apitest")
+                        //    {
+                                
+                        //        return "test";
+                        //    }
+                        //    return controller.ControllerName;
+                        //};
+                    });
+
             });
         }
 

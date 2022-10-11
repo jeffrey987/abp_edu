@@ -39,11 +39,7 @@ namespace ABC.TeachOnline.Books
  
         }
 
-        public void TestBook()
-        {
-            Console.WriteLine("test console output");
-            
-        }
+        
     }
 }
 

@@ -23,7 +23,8 @@ namespace ABC.TeachOnline.EntityFrameworkCore
     {
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Book> Books { get; set; }
-
+        public DbSet<Apis> Apis { get; set; }
+        public DbSet<BaseMenus> BaseMenus { get; set; }
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside TeachOnlineDbContextModelCreatingExtensions.ConfigureTeachOnline
          * 在这里为您的聚合根/实体添加DbSet属性。
