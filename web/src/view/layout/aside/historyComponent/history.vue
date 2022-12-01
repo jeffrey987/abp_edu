@@ -112,7 +112,7 @@ const openContextMenu = (e) => {
     }
     left.value = e.clientX - width
     top.value = e.clientY + 10
-    rightActive.value = id.split('-')[1]
+    rightActive.value = id.substring(4)
   }
 }
 const closeAll = () => {
@@ -311,6 +311,10 @@ const initPage = () => {
     activeValue.value = window.sessionStorage.getItem('activeValue')
   }
   setTab(route)
+  if (window.sessionStorage.getItem('needCloseAll') === 'true') {
+    closeAll()
+    window.sessionStorage.removeItem('needCloseAll')
+  }
 }
 initPage()
 

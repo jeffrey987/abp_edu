@@ -14,6 +14,7 @@
           ref="loginForm"
           :model="loginFormData"
           :rules="rules"
+          :validate-on-rule-change="false"
           @keyup.enter="submitForm"
         >
           <el-form-item prop="username">
@@ -141,9 +142,13 @@ const checkPassword = (rule, value, callback) => {
 
 // 获取验证码
 const loginVerify = () => {
-  captcha({}).then((ele) => {
-    rules.captcha[1].max = ele.data.captchaLength
-    rules.captcha[1].min = ele.data.captchaLength
+  captcha({}).then(async(ele) => {
+    rules.captcha.push({
+      max: ele.data.captchaLength,
+      min: ele.data.captchaLength,
+      message: `请输入${ele.data.captchaLength}位验证码`,
+      trigger: 'blur',
+    })
     picPath.value = ele.data.picPath
     loginFormData.captchaId = ele.data.captchaId
   })
@@ -168,7 +173,6 @@ const rules = reactive({
   username: [{ validator: checkUsername, trigger: 'blur' }],
   password: [{ validator: checkPassword, trigger: 'blur' }],
   captcha: [
-    { required: true, message: '请输入验证码', trigger: 'blur' },
     {
       message: '验证码格式不正确',
       trigger: 'blur',

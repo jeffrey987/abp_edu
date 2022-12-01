@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
@@ -18,7 +19,7 @@ namespace ABC.TeachOnline.Books
         /// get all books
         /// </summary>
         /// <returns></returns>
-      List<BookDto> GetBookalist();
+        IActionResult GetBookCollect();
 
     }
 

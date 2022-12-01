@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ABC.TeachOnline.Bases;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
@@ -30,13 +31,12 @@ namespace ABC.TeachOnline.Books
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<BookDto> GetBookalist()
+        public IActionResult GetBookCollect()
         {
+            var list =  _bookRepository.GetListAsync().Result;
 
-           var list =  _bookRepository.GetListAsync().Result;
-
-            return ObjectMapper.Map<List<Book>, List<BookDto>>(list);
- 
+            var result= ObjectMapper.Map<List<Book>, List<BookDto>>(list);
+            return BaseResponse.OkWithDetailed<List<BookDto>>(result,"获取成功");
         }
 
         

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
@@ -12,7 +14,7 @@ namespace ABC.TeachOnline.Books
             PagedAndSortedResultRequestDto, //Used for paging/sorting
             CreateUpdateApiDto> //Used to create/update a book
     {
-        public IList<ApiDto> GetAllApis();
+        public  Task<IActionResult> GetAllApis();
 
     
     }

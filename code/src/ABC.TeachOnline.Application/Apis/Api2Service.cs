@@ -34,16 +34,12 @@ namespace ABC.TeachOnline.Books
         /// get all 
         /// </summary>
         /// <returns></returns>
-        public IList<ApiDto> GetAllApis()
+        public async Task<IActionResult> GetAllApis()
         {
-            var list = _repository.GetListAsync().Result;
-            return ObjectMapper.Map<List<Apis>, List<ApiDto>>(list);
+            var list = await _repository.GetListAsync();
+            return BaseResponse.OkWithData(ObjectMapper.Map<List<Apis>, List<ApiDto>>(list));
         }
 
-        // protected async override Task DeleteByIdAsync(Guid id)
-        // {
-        //     await Repository.DeleteAsync(d => d.Id == id);
-        // }
 
         
     }
