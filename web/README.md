@@ -27,7 +27,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-##### 2.5.5v
+
 整理代码结构
 ``` lua
 web

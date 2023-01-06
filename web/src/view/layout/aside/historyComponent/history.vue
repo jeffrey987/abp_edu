@@ -5,7 +5,7 @@
       :closable="!(historys.length === 1 && $route.name === defaultRouter)"
       type="card"
       @contextmenu.prevent="openContextMenu($event)"
-      @tab-click="changeTab"
+      @tab-change="changeTab"
       @tab-remove="removeTab"
     >
       <el-tab-pane
@@ -209,9 +209,14 @@ const setTab = (route) => {
 
 const historyMap = ref({})
 
-const changeTab = (TabsPaneContext) => {
-  const name = TabsPaneContext?.props?.name
-  if (!name) return
+watch(() => historys.value, () => {
+  historyMap.value = {}
+  historys.value.forEach((item) => {
+    historyMap.value[getFmtString(item)] = item
+  })
+})
+
+const changeTab = (name) => {
   const tab = historyMap.value[name]
   router.push({
     name: tab.name,
@@ -269,11 +274,6 @@ watch(() => route, (to, now) => {
 
 watch(() => historys.value, () => {
   sessionStorage.setItem('historys', JSON.stringify(historys.value))
-  historyMap.value = {}
-  historys.value.forEach((item) => {
-    historyMap.value[getFmtString(item)] = item
-  })
-  emitter.emit('setKeepAlive', historys.value)
 }, {
   deep: true
 })

@@ -442,9 +442,6 @@ const changeEmail = async() => {
     min-height: calc(90vh - 200px);
     padding: 30px 20px;
     text-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    flex-shrink: 0;
     .el-avatar {
       border-radius: 50%;
     }
@@ -492,9 +489,6 @@ const changeEmail = async() => {
   }
 }
 .user-addcount {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
   ul {
     li {
       .title {
@@ -512,9 +506,6 @@ const changeEmail = async() => {
         }
       }
       border-bottom: 2px solid #f0f2f5;
-      &:last-child{
-        border-bottom: none;
-      }
     }
   }
 }

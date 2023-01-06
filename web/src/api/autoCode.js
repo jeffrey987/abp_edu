@@ -24,11 +24,10 @@ export const createTemp = (data) => {
 // @Produce application/json
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"创建成功"}"
 // @Router /autoCode/getDatabase [get]
-export const getDB = (params) => {
+export const getDB = () => {
   return service({
     url: '/autoCode/getDB',
-    method: 'get',
-    params
+    method: 'get'
   })
 }
 

@@ -45,9 +45,7 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    if (!error.config.donNotShowLoading) {
-      closeLoading()
-    }
+    closeLoading()
     ElMessage({
       showClose: true,
       message: error,
@@ -61,9 +59,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const userStore = useUserStore()
-    if (!response.config.donNotShowLoading) {
-      closeLoading()
-    }
+    closeLoading()
     if (response.headers['new-token']) {
       userStore.setToken(response.headers['new-token'])
     }
@@ -87,9 +83,7 @@ service.interceptors.response.use(
     }
   },
   error => {
-    if (!error.config.donNotShowLoading) {
-      closeLoading()
-    }
+    closeLoading()
 
     if (!error.response) {
       ElMessageBox.confirm(`
